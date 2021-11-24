@@ -442,6 +442,10 @@ func createRateLimitMiddleware(rateLimit *v1alpha1.RateLimit) (*dynamic.RateLimi
 		}
 	}
 
+	if rateLimit.SourceCriterion != nil {
+		rl.SourceCriterion = rateLimit.SourceCriterion
+	}
+
 	return rl, nil
 }
 
